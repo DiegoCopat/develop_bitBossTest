@@ -10,12 +10,14 @@ use Laravel\Jetstream\Features;
 
 class UserFactory extends Factory
 {
+
+    protected $model = User::class;
+    
     /**
      * The name of the factory's corresponding model.
      *
      * @var string
      */
-    protected $model = User::class;
 
     /**
      * Define the model's default state.
