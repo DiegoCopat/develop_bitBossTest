@@ -7,7 +7,6 @@ use App\Mail\StatusCandidature;
 use App\Models\Candidature;
 use App\Models\User;
 use App\Notifications\SlackNotification;
-use App\Notifications\TelegramNotification;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Mail;
