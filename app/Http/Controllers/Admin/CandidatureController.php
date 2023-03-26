@@ -5,6 +5,9 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use App\Mail\StatusCandidature;
 use App\Models\Candidature;
+use App\Models\User;
+use App\Notifications\SlackNotification;
+use App\Notifications\TelegramNotification;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Mail;
@@ -62,6 +65,11 @@ class CandidatureController extends Controller
 
         Mail::to($address_to)->send(new StatusCandidature($message, $object));
 
+        // selezione del responsabile per l'invio della notifica sul gruppo Slack
+        
+        $send_notification_to_user = User::find(12);
+        $send_notification_to_user->notify(new SlackNotification());
+        
         return Redirect::back()->with('sessionGreen', 'Complimenti, la tua candidatura è stata inviata con successo! Verrai contattato presto dal nostro personale');
     }
 

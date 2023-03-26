@@ -10,6 +10,7 @@ module.exports = {
         './resources/js/**/*.vue',
         './resources/js/**/**/*.vue',
         './resources/js/**/**/**/*.vue',
+        './resources/js/**/**/**/*.vue',
     ],
 
     theme: {

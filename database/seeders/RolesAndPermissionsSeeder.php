@@ -22,7 +22,7 @@ class RolesAndPermissionsSeeder extends Seeder
         $count = 0;
 
         foreach ($users as $user) {
-            if($count <= count($users) - 3) {
+            if($count < 8) {
                 $user->assignRole('staff');
             }else {
                 $user->assignRole('candidate');
